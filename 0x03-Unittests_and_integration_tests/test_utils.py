@@ -9,10 +9,9 @@ from utils import access_nested_map, get_json, memoize
 
 
 class TestAccessNestedMap(unittest.TestCase):
-    """_summary_
-
-    Args:
-        unittest (_type_): _description_
+    """
+    A class that inherits from unittest.TestCase
+    for carrying out unit test on utils.access_nested_map
     """
 
     @parameterized.expand(
@@ -23,7 +22,9 @@ class TestAccessNestedMap(unittest.TestCase):
         ]
     )
     def test_access_nested_map(self, nested_map, path, expected_output):
-        """_summary_
+        """
+        A method to test that utils.access_nested_map
+        returns what it is supposed to
         """
         result = access_nested_map(nested_map, path)
         self.assertEqual(result, expected_output)
