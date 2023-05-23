@@ -3,8 +3,9 @@
 Test Client
 """
 from parameterized import parameterized
-from utils import access_nested_map
+from utils import access_nested_map, get_json, memoize
 from unittest import TestCase
+from unittest.mock import patch, Mock
 
 
 class TestAccessNestedMap(TestCase):
@@ -40,7 +41,7 @@ class TestAccessNestedMap(TestCase):
         self.assertRaises(KeyError, access_nested_map, nested_map, path)
 
 
-class TestGetJson(unittest.TestCase):
+class TestGetJson(TestCase):
     """
     A class that inherits from unittest.TestCase
     for carrying out unit test on utils.get_json
@@ -63,7 +64,7 @@ class TestGetJson(unittest.TestCase):
             self.assertEqual(response, expected_output)
 
 
-class TestMemoize(unittest.TestCase):
+class TestMemoize(TestCase):
     """
     Class for testing the utils.memoize decorator
     """
